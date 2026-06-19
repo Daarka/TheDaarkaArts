@@ -57,15 +57,32 @@ body {
     --btn-color-danger: #3A3639
 
 }
+
+/*--------------------------------------*/
+
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 </style>
 </head>
 <body>
 
 <div class="card p-3" style="width:100%;background:#F7F7F7;border-width:1px;border-color:#aa0000;color:#BF0000;border-radius:30px;" align="center">
+
+<!-- Tab content -->
+<div id="home" class="tabcontent">
+
 <div class="row">
 <div class="col-6">
         <h1>Status:</h1>
         <div align="center"><img src="https://i.gyazo.com/37bcdf1b2b353a7248314635d4cef3ad.png" style="width:150px;"></div>
+        <p><span class="tablinks" onclick="openTab(event, 'queue')">Current Queue</span></p>
         <p><i>Join my <b><a href="https://daarka.com/#contact" style="color:#ed2020;">Discord Server</a></b> to be notified whenever slots are available!</i></p>
 <div align="center">
 <img src="https://i.gyazo.com/32e70c5c930eb937bed225719b46f58f.png" style="width:50px;height:auto;">
@@ -106,44 +123,36 @@ I do not give quotes smaller than $25 (1 hour of work).</p>
     <li>Trademarked Characters</li>
     <li>Illegal Content</li>
 </ul></div>
-<p style="font-size:small;"><span style="color:#ed2020;font-weight:bold;">* </span>For an in-depth list of what NSFW elements I will and will not draw, click <a href="" style="font-weight:bold;color:#ed2020;">here</a>!
+<p style="font-size:small;"><span style="color:#ed2020;font-weight:bold;">* </span>For an in-depth list of what NSFW elements I will and will not draw, click <span class="tablinks"  onclick="openTab(event, 'nsfw')" style="font-weight:bold;color:#ed2020;">here</span>!
 <p style="font-size:small;">If you have something in mind that isn't listed there, just shoot me a message and ask!</p>
 
 </div>
-
-</div></div></div>
-
-
-
-
-
-
-<!-- Tab links -->
-<div class="tab">
-  <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
 </div>
 
-<!-- Tab content -->
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
+<div id="nsfw" class="tabcontent">
+  <span class="tablinks"  onclick="openTab(event, 'home')" style="font-weight:bold;color:#ed2020;">here</span>
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p>
+<div id="queue" class="tabcontent">
+  <span class="tablinks"  onclick="openTab(event, 'home')" style="font-weight:bold;color:#ed2020;">here</span>
 </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
+</div></div>
+
+
+
+
+
+
+
 
 
 <script>
-    function openCity(evt, cityName) {
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+    function openTab(evt, tabName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
@@ -160,7 +169,7 @@ I do not give quotes smaller than $25 (1 hour of work).</p>
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
 </script>
