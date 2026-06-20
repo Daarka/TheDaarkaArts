@@ -60,6 +60,16 @@ body {
 
 /*--------------------------------------*/
 
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: transparent;
+}
+
+/* Style the tab content 
+.tabcontent {
+  display: none;
+}*/
+
 .tabcontent {
   animation: fadeEffect 1s; /* Fading effect takes 1 second */
 }
@@ -74,6 +84,8 @@ body {
 <body>
 
 <div class="card p-3" style="width:100%;background:#F7F7F7;border-width:1px;border-color:#aa0000;color:#BF0000;border-radius:30px;" align="center">
+
+<span class="tablinks"  onclick="openTab(event, 'home')"  id="defaultOpen"></span>
 
 <!-- Tab content -->
 <div id="home" class="tabcontent">
@@ -144,12 +156,8 @@ I do not give quotes smaller than $25 (1 hour of work).</p>
 
 
 
-
-
-
-
 <script>
-// Get the element with id="defaultOpen" and click on it
+    // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
     function openTab(evt, tabName) {
