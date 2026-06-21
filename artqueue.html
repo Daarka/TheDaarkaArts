@@ -1,0 +1,127 @@
+<html>
+<head>
+<link href="/TheDaarkaArts/styles/site_bootstrap.css" rel="stylesheet">
+<link href="/TheDaarkaArts/styles/main.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/0ddae54ad8.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+/*--------------------------------------*/
+/* set the sidebar width */
+::-webkit-scrollbar { width: .75em;}
+
+/* set the sidebar track color */
+::-webkit-scrollbar-track { background: #ffffff00; }
+
+/* set the sidebar button colors */
+::-webkit-scrollbar-thumb {
+background: transparent;
+border: 1px solid #454144; }
+
+/*------------------
+body {
+ background: #DFDFDF;
+ background: url('/TheDaarkaArts/assets/bg.png'); 
+ background-attachment: fixed;
+}
+--------------------*/
+body {
+background: #322f31; 
+background-attachment: fixed;
+font-family: "Averia Sans Libre", sans-serif;
+}
+
+:root {
+--input-color: #b7b2a6;
+--input-background-color: #322f31;
+--input-border-radius: 0.25rem;
+--input-border-color: hsla(0, 0%, 100%, .15);
+--input-border-width: 1px;
+--color-primary: #3A3639;
+--color-secondary: #79eded;
+--color-info: #79eded;
+--color-success: #83d39a;
+--color-warning: #cc828a;
+--color-danger: #cc828a;
+--color-light: #F3F3EA;
+--color-dark: #474243;
+--color-background: #322f31;
+--text-color: #fcfbf6;
+--btn-color-primary: #3A3639;
+--btn-color-secondary: #3A3639;
+--btn-color-info: #3A3639;
+--btn-color-success: #3A3639;
+--btn-color-warning: #3A3639;
+--btn-color-danger: #3A3639
+
+}
+
+/*--------------------------------------*/
+
+/* Create an active/current tablink class */
+.tab button.active {
+background-color: transparent;
+}
+
+/* Style the tab content 
+.tabcontent {
+ display: none;
+}*/
+
+.tabcontent {
+animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+</style>
+</head>
+<body>
+<div class="card p-3" style="width:100%;background:#F7F7F7;border-width:1px;border-color:#aa0000;color:#BF0000;border-radius:30px;" align="center">
+
+<span class="tablinks"  onclick="openTab(event, 'home')"  id="defaultOpen"></span>
+
+<!-- Tab content -->
+<div id="home" class="tabcontent">
+<div class="row"><div class="col-0"></div>
+<div class="col-1"><a class="tablinks"  href="/TheDaarkaArts/artcomms.html" style="border-width:1px;border-color:#ed2020;color:#BF0000;border-radius:10px;font-family:'Averia Sans Libre';font-size:large;background-color: #fff;">⇠</a></div><div class="col-10"></div></div>
+<h1>Queue</h1>
+<div class="container" style="position:relative; margin-left: 5%; border-radius:20px; width: 100vw; height: 70vh; overflow: scroll;">
+<iframe src="https://daarka.notion.site/ebd//3867c173147880d69eead675f909aae4?v=3867c1731478803b8bdc000c208d57db" frameborder="0" style="position: relative; left:-80px; top: -80px; width: 97vw; height: 200vh; pointer-events: none;">
+</div> 
+</div> 
+</div>   
+ 
+
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+function openTab(evt, tabName) {
+// Declare all variables
+var i, tabcontent, tablinks;
+
+// Get all elements with class="tabcontent" and hide them
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+tabcontent[i].style.display = "none";
+}
+
+// Get all elements with class="tablinks" and remove the class "active"
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tablinks.length; i++) {
+tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+
+// Show the current tab, and add an "active" class to the button that opened the tab
+document.getElementById(tabName).style.display = "block";
+evt.currentTarget.className += " active";
+}
+</script>
+
+</body></html>
